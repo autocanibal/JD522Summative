@@ -23,13 +23,54 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="depBtn" max="32767" attributes="0"/>
+                  <Component id="corBtn" alignment="1" max="32767" attributes="0"/>
+                  <Component id="facBtn" alignment="1" max="32767" attributes="0"/>
+                  <Component id="stuBtn" alignment="1" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="247" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+              <Component id="stuBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <Component id="facBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <Component id="corBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="depBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="53" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="stuBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Students"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="facBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Faculties"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="corBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Courses"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="depBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Departments"/>
+      </Properties>
+    </Component>
+  </SubComponents>
 </Form>

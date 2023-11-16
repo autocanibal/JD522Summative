@@ -26,17 +26,46 @@ public class JD522Summative extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        stuBtn = new javax.swing.JButton();
+        facBtn = new javax.swing.JButton();
+        corBtn = new javax.swing.JButton();
+        depBtn = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        stuBtn.setText("Students");
+
+        facBtn.setText("Faculties");
+
+        corBtn.setText("Courses");
+
+        depBtn.setText("Departments");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(depBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(corBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(facBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(stuBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(247, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addComponent(stuBtn)
+                .addGap(41, 41, 41)
+                .addComponent(facBtn)
+                .addGap(41, 41, 41)
+                .addComponent(corBtn)
+                .addGap(34, 34, 34)
+                .addComponent(depBtn)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +107,9 @@ public class JD522Summative extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton corBtn;
+    private javax.swing.JButton depBtn;
+    private javax.swing.JButton facBtn;
+    private javax.swing.JButton stuBtn;
     // End of variables declaration//GEN-END:variables
 }
