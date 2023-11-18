@@ -15,6 +15,8 @@ public class UniResManApp extends javax.swing.JFrame {
      */
     public UniResManApp() {
         initComponents();
+        this.setTitle("University Resource Management Application");
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -30,6 +32,7 @@ public class UniResManApp extends javax.swing.JFrame {
         facBtn = new javax.swing.JButton();
         corBtn = new javax.swing.JButton();
         depBtn = new javax.swing.JButton();
+        closeBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,10 +44,32 @@ public class UniResManApp extends javax.swing.JFrame {
         });
 
         facBtn.setText("Faculties");
+        facBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                facBtnActionPerformed(evt);
+            }
+        });
 
         corBtn.setText("Courses");
+        corBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                corBtnActionPerformed(evt);
+            }
+        });
 
         depBtn.setText("Departments");
+        depBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                depBtnActionPerformed(evt);
+            }
+        });
+
+        closeBtn.setText("Close");
+        closeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,6 +83,10 @@ public class UniResManApp extends javax.swing.JFrame {
                     .addComponent(facBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(stuBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(247, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(closeBtn)
+                .addGap(15, 15, 15))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -70,7 +99,9 @@ public class UniResManApp extends javax.swing.JFrame {
                 .addComponent(corBtn)
                 .addGap(34, 34, 34)
                 .addComponent(depBtn)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(closeBtn)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,8 +109,36 @@ public class UniResManApp extends javax.swing.JFrame {
 
     private void stuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stuBtnActionPerformed
         // TODO add your handling code here:
+        StudentPage stuPag = new StudentPage();
+        stuPag.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_stuBtnActionPerformed
+
+    private void facBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facBtnActionPerformed
+        // TODO add your handling code here:
+        FacultyPage facPag = new FacultyPage();
+        facPag.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_facBtnActionPerformed
+
+    private void corBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_corBtnActionPerformed
+        // TODO add your handling code here:
+        CoursesPage couPag = new CoursesPage();
+        couPag.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_corBtnActionPerformed
+
+    private void depBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_depBtnActionPerformed
+        // TODO add your handling code here:
+        DepartmentsPage depPag = new DepartmentsPage();
+        depPag.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_depBtnActionPerformed
+
+    private void closeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeBtnActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_closeBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,6 +177,7 @@ public class UniResManApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton closeBtn;
     private javax.swing.JButton corBtn;
     private javax.swing.JButton depBtn;
     private javax.swing.JButton facBtn;
