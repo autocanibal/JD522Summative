@@ -8,12 +8,12 @@ package org.mondemkhize.jd522summative;
  *
  * @author monde
  */
-public class JD522Summative extends javax.swing.JFrame {
+public class UniResManApp extends javax.swing.JFrame {
 
     /**
      * Creates new form JD522Summative
      */
-    public JD522Summative() {
+    public UniResManApp() {
         initComponents();
     }
 
@@ -34,6 +34,11 @@ public class JD522Summative extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         stuBtn.setText("Students");
+        stuBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stuBtnActionPerformed(evt);
+            }
+        });
 
         facBtn.setText("Faculties");
 
@@ -71,6 +76,11 @@ public class JD522Summative extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void stuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stuBtnActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_stuBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -88,20 +98,21 @@ public class JD522Summative extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JD522Summative.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UniResManApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JD522Summative.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UniResManApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JD522Summative.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UniResManApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JD522Summative.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UniResManApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JD522Summative().setVisible(true);
+                new UniResManApp().setVisible(true);
             }
         });
     }
