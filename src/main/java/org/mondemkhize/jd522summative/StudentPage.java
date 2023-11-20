@@ -16,6 +16,8 @@ public class StudentPage extends javax.swing.JFrame {
     public StudentPage() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        
     }
 
     /**

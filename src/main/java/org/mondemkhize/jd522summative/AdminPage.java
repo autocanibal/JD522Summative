@@ -8,15 +8,14 @@ package org.mondemkhize.jd522summative;
  *
  * @author Monde
  */
-public class DepartmentsPage extends javax.swing.JFrame {
+public class AdminPage extends javax.swing.JFrame {
 
     /**
-     * Creates new form DepartmentsPage
+     * Creates new form AdminPage
      */
-    public DepartmentsPage() {
+    public AdminPage() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
     }
 
     /**
@@ -28,21 +27,20 @@ public class DepartmentsPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        courseBtn = new javax.swing.JButton();
-        facultyBtn = new javax.swing.JButton();
+        manUsersBtn = new javax.swing.JButton();
+        systemBtn = new javax.swing.JButton();
         backBtn = new javax.swing.JButton();
-        adminBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        courseBtn.setText("Manage Courses");
-        courseBtn.addActionListener(new java.awt.event.ActionListener() {
+        manUsersBtn.setText("Manage Users");
+        manUsersBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                courseBtnActionPerformed(evt);
+                manUsersBtnActionPerformed(evt);
             }
         });
 
-        facultyBtn.setText("Manage Faculty");
+        systemBtn.setText("System Settings");
 
         backBtn.setText("Back");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -51,68 +49,49 @@ public class DepartmentsPage extends javax.swing.JFrame {
             }
         });
 
-        adminBtn.setText("Admin");
-        adminBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminBtnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(109, Short.MAX_VALUE)
+                .addContainerGap(51, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(courseBtn)
-                        .addGap(47, 47, 47)
-                        .addComponent(facultyBtn)
-                        .addGap(105, 105, 105))
+                        .addComponent(manUsersBtn)
+                        .addGap(48, 48, 48)
+                        .addComponent(systemBtn)
+                        .addGap(84, 84, 84))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(backBtn)
-                        .addGap(44, 44, 44))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(adminBtn)
-                        .addGap(126, 126, 126))))
+                        .addGap(27, 27, 27))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(adminBtn)
-                .addGap(18, 18, 18)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(153, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(courseBtn)
-                    .addComponent(facultyBtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                    .addComponent(manUsersBtn)
+                    .addComponent(systemBtn))
+                .addGap(76, 76, 76)
                 .addComponent(backBtn)
-                .addGap(37, 37, 37))
+                .addGap(25, 25, 25))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        // TODO add your handling code here:
         UniResManApp mainPage = new UniResManApp();
         mainPage.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backBtnActionPerformed
 
-    private void adminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminBtnActionPerformed
-        AdminPage adminPage = new AdminPage();
-        adminPage.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_adminBtnActionPerformed
-
-    private void courseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseBtnActionPerformed
+    private void manUsersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manUsersBtnActionPerformed
         // TODO add your handling code here:
-        CoursesPage coursesPage = new CoursesPage();
-        coursesPage.setVisible(true);
+        UsersPage mainPage = new UsersPage();
+        mainPage.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_courseBtnActionPerformed
+    }//GEN-LAST:event_manUsersBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,28 +110,27 @@ public class DepartmentsPage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DepartmentsPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DepartmentsPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DepartmentsPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DepartmentsPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DepartmentsPage().setVisible(true);
+                new AdminPage().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton adminBtn;
     private javax.swing.JButton backBtn;
-    private javax.swing.JButton courseBtn;
-    private javax.swing.JButton facultyBtn;
+    private javax.swing.JButton manUsersBtn;
+    private javax.swing.JButton systemBtn;
     // End of variables declaration//GEN-END:variables
 }

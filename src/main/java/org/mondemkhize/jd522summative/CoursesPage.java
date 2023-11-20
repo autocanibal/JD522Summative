@@ -4,6 +4,12 @@
  */
 package org.mondemkhize.jd522summative;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Monde
@@ -16,6 +22,17 @@ public class CoursesPage extends javax.swing.JFrame {
     public CoursesPage() {
         initComponents();
         this.setLocationRelativeTo(null);
+        //this.getDBValues(new DatabaseUtils().selectTable(this, "Course"));
+        
+        
+        DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
+        ArrayList entries = new DatabaseUtils().selectTable(this, "Course");
+        for(int a = 0; a< entries.size(); a++) {
+            tableModel.addRow((Object[]) entries.get(a));
+        }
+
+        
+        
     }
 
     /**
@@ -28,8 +45,14 @@ public class CoursesPage extends javax.swing.JFrame {
     private void initComponents() {
 
         backBtn = new javax.swing.JButton();
+        addOrRemoveComboBox = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        idField = new javax.swing.JTextField();
+        nameField = new javax.swing.JTextField();
+        addBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,40 +63,100 @@ public class CoursesPage extends javax.swing.JFrame {
             }
         });
 
+        addOrRemoveComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Add", "Remove" }));
+        addOrRemoveComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addOrRemoveComboBoxActionPerformed(evt);
+            }
+        });
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "id", "name", "dep_id", "fac_id", "course_mat", "grades", "students"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setColumnSelectionAllowed(true);
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
+        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
+        idField.setEditable(false);
+        idField.setText("1");
+
+        addBtn.setText("Add");
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("ID");
+
+        jLabel3.setText("Name");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(backBtn)
-                .addGap(15, 15, 15))
+                .addGap(25, 25, 25))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(18, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nameField, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                            .addComponent(idField))
+                        .addGap(26, 26, 26))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addBtn)
+                            .addComponent(addOrRemoveComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(backBtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(backBtn))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(addOrRemoveComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(addBtn)
+                .addGap(55, 55, 55))
         );
 
         pack();
@@ -86,6 +169,60 @@ public class CoursesPage extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_backBtnActionPerformed
 
+    private void addOrRemoveComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOrRemoveComboBoxActionPerformed
+        switch (addOrRemoveComboBox.getSelectedIndex()){
+            case 0:
+            {
+                this.nameField.setVisible(true);
+                this.idField.setVisible(true);
+                this.jLabel2.setVisible(true);
+                this.jLabel3.setVisible(true);
+                this.addBtn.setText("Add");
+
+                DatabaseUtils databaseUtils = new DatabaseUtils();
+                this.idField.setText(databaseUtils.nextId(this, "Course"));
+
+                this.revalidate();
+                this.repaint();
+                break;
+            }
+            case 1:
+            {
+                this.nameField.setVisible(false);
+                this.idField.setVisible(false);
+                this.jLabel2.setVisible(false);
+                this.jLabel3.setVisible(false);
+                this.addBtn.setText("Remove");
+                this.revalidate();
+                this.repaint();
+                break;
+            }
+            default:
+            break;
+        }
+
+    }//GEN-LAST:event_addOrRemoveComboBoxActionPerformed
+
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+        // TODO add your handling code here:
+        DatabaseUtils dbut = new DatabaseUtils();
+        if(this.addBtn.getText().equals("Add")){
+            String Table = "Course";
+            int ID = Integer.parseInt(this.idField.getText());
+            String Name = this.nameField.getText();
+            dbut.InsertInto(this, Table, ID, Name);
+            DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
+            ArrayList entries = new DatabaseUtils().selectTable(this, "Course");
+            for (int a = 0; a < entries.size(); a++) {
+                tableModel.addRow((Object[]) entries.get(a));
+            }
+        }else if(this.addBtn.getText().equals("Remove")){
+
+        }
+    }//GEN-LAST:event_addBtnActionPerformed
+
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -122,8 +259,14 @@ public class CoursesPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addBtn;
+    private javax.swing.JComboBox<String> addOrRemoveComboBox;
     private javax.swing.JButton backBtn;
+    private javax.swing.JTextField idField;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField nameField;
     // End of variables declaration//GEN-END:variables
 }

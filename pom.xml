@@ -5,17 +5,18 @@
     <artifactId>JD522Summative</artifactId>
     <version>0.1.0-ALPHA</version>
     <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>12.4.2.jre11</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <exec.mainClass>org.mondemkhize.jd522summative.UniResManApp</exec.mainClass>
     </properties>
-    <dependencies>
-        <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
-            <version>8.2.1.jre11</version>
-        </dependency>
-    </dependencies>
 </project>

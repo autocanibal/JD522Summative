@@ -16,6 +16,7 @@ public class FacultyPage extends javax.swing.JFrame {
     public FacultyPage() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
     }
 
     /**
