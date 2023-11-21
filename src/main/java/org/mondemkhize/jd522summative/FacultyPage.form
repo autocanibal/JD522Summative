@@ -60,16 +60,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Manage Courses"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageCoBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="manageGraBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Manage Grades"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageGraBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="manStuBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Manage Students"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manStuBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="backBtn">
       <Properties>

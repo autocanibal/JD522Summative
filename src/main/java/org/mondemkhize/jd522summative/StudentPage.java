@@ -37,10 +37,25 @@ public class StudentPage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         enrollBtn.setText("Enroll");
+        enrollBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enrollBtnActionPerformed(evt);
+            }
+        });
 
         viewCoMatBtn.setText("View Course Materials");
+        viewCoMatBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewCoMatBtnActionPerformed(evt);
+            }
+        });
 
         viewGradesBtn.setText("View Grades");
+        viewGradesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewGradesBtnActionPerformed(evt);
+            }
+        });
 
         backBtn.setText("Back");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +103,18 @@ public class StudentPage extends javax.swing.JFrame {
         mainPage.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backBtnActionPerformed
+
+    private void enrollBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enrollBtnActionPerformed
+
+    private void viewGradesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewGradesBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewGradesBtnActionPerformed
+
+    private void viewCoMatBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewCoMatBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewCoMatBtnActionPerformed
 
     /**
      * @param args the command line arguments

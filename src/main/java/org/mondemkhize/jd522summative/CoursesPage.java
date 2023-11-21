@@ -22,7 +22,7 @@ public class CoursesPage extends javax.swing.JFrame {
     public CoursesPage() {
         initComponents();
         this.setLocationRelativeTo(null);
-        //this.getDBValues(new DatabaseUtils().selectTable(this, "Course"));
+        this.idField.setText(new DatabaseUtils().nextId(this, "Course"));
         
         
         DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
@@ -75,7 +75,7 @@ public class CoursesPage extends javax.swing.JFrame {
 
             },
             new String [] {
-                "id", "name", "dep_id", "fac_id", "course_mat", "grades", "students"
+                "id", "name", "dep_id", "fac_id", "course_mat", "grades", "students_ids"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -216,6 +216,8 @@ public class CoursesPage extends javax.swing.JFrame {
             for (int a = 0; a < entries.size(); a++) {
                 tableModel.addRow((Object[]) entries.get(a));
             }
+            this.idField.setText(String.valueOf(Integer.parseInt(this.idField.getText()) + 1));
+            this.nameField.setText("");
         }else if(this.addBtn.getText().equals("Remove")){
 
         }

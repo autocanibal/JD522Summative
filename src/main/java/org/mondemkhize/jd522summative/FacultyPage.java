@@ -36,10 +36,25 @@ public class FacultyPage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         manageCoBtn.setText("Manage Courses");
+        manageCoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manageCoBtnActionPerformed(evt);
+            }
+        });
 
         manageGraBtn.setText("Manage Grades");
+        manageGraBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manageGraBtnActionPerformed(evt);
+            }
+        });
 
         manStuBtn.setText("Manage Students");
+        manStuBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manStuBtnActionPerformed(evt);
+            }
+        });
 
         backBtn.setText("Back");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -81,11 +96,25 @@ public class FacultyPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        // TODO add your handling code here:
         UniResManApp mainPage = new UniResManApp();
         mainPage.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backBtnActionPerformed
+
+    private void manageCoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageCoBtnActionPerformed
+        CoursesPage g = new CoursesPage();
+        g.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_manageCoBtnActionPerformed
+
+    private void manageGraBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageGraBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_manageGraBtnActionPerformed
+
+    private void manStuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manStuBtnActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_manStuBtnActionPerformed
 
     /**
      * @param args the command line arguments

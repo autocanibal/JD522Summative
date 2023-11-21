@@ -43,6 +43,11 @@ public class DepartmentsPage extends javax.swing.JFrame {
         });
 
         facultyBtn.setText("Manage Faculty");
+        facultyBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                facultyBtnActionPerformed(evt);
+            }
+        });
 
         backBtn.setText("Back");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +100,6 @@ public class DepartmentsPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        // TODO add your handling code here:
         UniResManApp mainPage = new UniResManApp();
         mainPage.setVisible(true);
         this.dispose();
@@ -108,11 +112,14 @@ public class DepartmentsPage extends javax.swing.JFrame {
     }//GEN-LAST:event_adminBtnActionPerformed
 
     private void courseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseBtnActionPerformed
-        // TODO add your handling code here:
         CoursesPage coursesPage = new CoursesPage();
         coursesPage.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_courseBtnActionPerformed
+
+    private void facultyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_facultyBtnActionPerformed
 
     /**
      * @param args the command line arguments

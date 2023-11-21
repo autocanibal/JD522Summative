@@ -107,7 +107,7 @@ public class DatabaseUtils {
                         grades = rs.getString("grades");
                         grades = rs.wasNull() ? "null" : grades;
 
-                        students = rs.getString("students");
+                        students = rs.getString("students_ids");
                         students = rs.wasNull() ? "null" : students;
 
                         String tableData[] = {id, name, depID, facID, courseMat, grades, students};

@@ -60,16 +60,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Enroll"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="enrollBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="viewCoMatBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="View Course Materials"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewCoMatBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="viewGradesBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="View Grades"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewGradesBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="backBtn">
       <Properties>
